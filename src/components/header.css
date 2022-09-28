@@ -1,0 +1,23 @@
+
+.header-main{
+    background-color: #000000;
+    padding: 1px;
+    text-align: center;
+}
+
+.header-top{
+   text-align: center;   
+}
+
+.header-top p{
+    color:#8ECAE6;
+    font-weight: 700;
+    font-size: 18px;
+   
+}
+
+.header-top span{
+    color:#FFB702;
+    font-weight: 700;
+    font-size: 18px;
+}

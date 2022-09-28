@@ -2,6 +2,7 @@ import React,{useEffect} from 'react';
 import "./home.css"
 import {useDispatch, useSelector} from 'react-redux'
 import { getNasa,getImdb } from '../slices/apiCalls'
+import Header from '../components/Header';
 
 function Home() {
   const dispatch = useDispatch()
@@ -16,7 +17,9 @@ function Home() {
   console.log(nasa)
   
   return (
-    <div>Home</div>
+    <div>
+      <Header/>
+    </div>
   )
 }
 
