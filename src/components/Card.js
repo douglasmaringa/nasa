@@ -20,9 +20,9 @@ function Card({data}) {
           </>)
         }
         <h1>{data?.original_title}</h1>
-    <p><span>Description:</span><br/>{data?.overview}</p>
-    <p className="card-btm">Popularity:<span>{data?.popularity}</span></p>
-    <p className="card-btm">Realease date:<span>{data?.release_date}</span></p>
+        <p><span>Description:</span><br/>{data?.overview}</p>
+        <p className="card-btm">Popularity:<span>{data?.popularity}</span></p>
+        <p className="card-btm">Realease date:<span>{data?.release_date}</span></p>
     </div>
   )
 }
