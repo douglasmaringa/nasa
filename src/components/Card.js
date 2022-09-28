@@ -7,7 +7,7 @@ function Card({data}) {
    
    //open details page
   const details=()=>{
-    navigate('/details', { state: data});
+    navigate('/details', { state: data.id});
    }
 
   return (

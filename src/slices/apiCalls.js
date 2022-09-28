@@ -28,13 +28,28 @@ export const getImdb = createAsyncThunk(
   );
 
 
+  //action for getting data from imdb by id
+export const getById = createAsyncThunk(
+  "nasa/getSingle",
+  async ({id},dispatch, getState) => {
+  
+    try{
+    return await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=48b43c71c226d58239efb833d05ab17c`)
+    }catch(err){
+     return err;
+    }
+  }
+);
+
+
 //Redux State
 const apiCalls = createSlice({
   name: "apiData",
   initialState: {
     status:"",
     nasa: [],
-    imdb:[]
+    imdb:[],
+    single:[]
   },
   
   //reducers for thunk axios call come here
@@ -49,6 +64,8 @@ const apiCalls = createSlice({
     [getNasa.rejected]: (state, action) => {
       state.status = "failed";
     },
+
+
     [getImdb.pending]: (state, action) => {
         state.status = "loading";
       },
@@ -57,6 +74,17 @@ const apiCalls = createSlice({
         state.imdb = action.payload.data;
        },
       [getImdb.rejected]: (state, action) => {
+        state.status = "failed";
+      }
+
+      ,[getById.pending]: (state, action) => {
+        state.status = "loading";
+      },
+      [getById.fulfilled]: (state, action) => {
+        state.status = "success";
+        state.single = action.payload.data;
+       },
+      [getById.rejected]: (state, action) => {
         state.status = "failed";
       }
   },
