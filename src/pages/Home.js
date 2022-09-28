@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
     dispatch(getNasa())
     dispatch(getImdb())
-  }, [])
+  }, [dispatch])
 
   console.log(nasa.hdurl)
   

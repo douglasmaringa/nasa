@@ -1,9 +1,17 @@
 import React from 'react'
 import "./card.css"
+import { useNavigate } from 'react-router-dom';
 
 function Card({data}) {
+  const navigate = useNavigate();
+   
+   //open details page
+  const details=()=>{
+    navigate('/details', { state: data});
+   }
+
   return (
-    <div className="card">
+    <div onClick={()=>{details()}} className="card">
         {
           data.poster_path?(<>
               <img src={`https://image.tmdb.org/t/p/original${data?.poster_path}`} alt="" />
