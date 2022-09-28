@@ -14,11 +14,12 @@ function Home() {
     dispatch(getImdb())
   }, [])
 
-  console.log(nasa)
+  console.log(nasa.hdurl)
   
   return (
     <div>
       <Header/>
+      <img src={nasa?.hdurl} alt="" height="50%"/>
     </div>
   )
 }
